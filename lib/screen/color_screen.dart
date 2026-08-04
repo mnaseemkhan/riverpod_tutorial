@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_flutter_tutorial/screen/search_screen.dart';
 
 import '../provider/slider_provider.dart';
 
@@ -11,6 +12,7 @@ class ColorScreen extends ConsumerWidget {
     print('print');
 
     return Scaffold(
+      appBar: AppBar(title: Text('Slider Screen'),),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,7 +30,13 @@ class ColorScreen extends ConsumerWidget {
               final stateProvider = ref.read(sliderProvider.notifier);
               stateProvider.state = stateProvider.state.copyWith(slider: value);
             });
-          })
+          }),
+          SizedBox(height: 20,),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context)=> SearchScreen()));
+          },
+              child: Text('Next'))
         ],
       ),
     );
