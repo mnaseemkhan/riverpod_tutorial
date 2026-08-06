@@ -38,6 +38,8 @@ class ColorScreen extends ConsumerWidget {
           },
               child: Text('Next'))
         ],
+
+        // learn more things
       ),
     );
   }
