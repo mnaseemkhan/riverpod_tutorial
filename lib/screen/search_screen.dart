@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_flutter_tutorial/provider/search_provider.dart';
+import 'package:riverpod_flutter_tutorial/screen/like_screen.dart';
 
 class SearchScreen extends ConsumerWidget {
   const SearchScreen({super.key});
@@ -20,7 +21,13 @@ class SearchScreen extends ConsumerWidget {
             final search = ref.watch(searchProvider);
 
             return Text(search);
-          })
+          }),
+          SizedBox(height: 20,),
+          ElevatedButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+                builder: (context)=> LikeScreen()));
+          },
+              child: Text('Next'))
         ],
       ),
     );
