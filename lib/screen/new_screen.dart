@@ -8,3 +8,4 @@ class NewScreen extends StatelessWidget {
     return Scaffold();
   }
 }
+// how to add riverpod in big apps
