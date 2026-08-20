@@ -11,5 +11,6 @@ class SearchProvider extends StateNotifier<String> {
   void search(String query){
     state  = query;
   }
+  // changes
 
 }
